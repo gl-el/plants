@@ -1,63 +1,122 @@
 * {
-    padding: 0;
     margin: 0;
-}
-
-a {
-    text-decoration: none;
-}
-
-
-body {
-    width: 1440px;
-    margin: 0 auto;
+    padding: 0;
 }
 
 ul {
     list-style: none;
 }
 
-header {
-    font-family: 'Inika', serif;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 42px 109px 42px 111px;
-    background-color: #EDF2EC;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
+.body {
+    width: 1440px;
+    margin: 0 auto;
 }
 
+.header {
+    font-family: 'Inika', serif;
+    width: 100%;
+    background-color: #EDF2EC;
+}
 
-.logo,
-.nav-list {
+.wrapper {
+    padding-left: 109px;
+    padding-right: 109px;
+}
+
+.header__wrapper {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    padding-top: 42px;
+    padding-bottom: 42px;
 }
 
 .logo {
     margin-right: auto;
+    display: flex;
+    flex-direction: row;
     align-items: baseline;
     color: #010201;
 }
 
-.logo img {
-    width:
+.logo__image {
     margin-left: 1px;
 }
 
-.nav-list {
+.navigation {
+    display: flex;
     gap: 46px;
     line-height: 50px;
     font-size: 16px;
 }
 
-a {
+.link {
     color: #010201;
+    text-decoration: none;
+    cursor: pointer;
 }
 
-.nav-active {
+.link_active {
     color: #E06733;
     font-weight: 700;
+}
+
+.main {
+    width: 100%;
+}
+
+.welcome {
+    background-color: #EDF2EC;
+}
+
+.welcome__wrapper {
+    padding-top: 62px;
+    padding-bottom: 62px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.welcome__image {
+    width:448.8px;
+    height:407.36px;
+    flex-shrink: 0;
+}
+
+.welcome__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-basis: 549px
+}
+
+.welcome__header {
+    font-family: 'Inter', sans-serif;
+    font-size: 45px;
+    line-height: 50px;
+    font-weight: 700;
+    color: #717171;
+}
+
+.header_green {
+    color: #499A18;
+}
+
+.text {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    color: #636060;
+}
+
+.welcome__text {
+    line-height: 30px;
+}
+
+.welcome__link {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #000;
+    padding: 14px 27px;
+    border: 2px solid #E06733;
+    border-radius: 10px;
 }
