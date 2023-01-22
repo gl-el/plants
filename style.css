@@ -69,12 +69,15 @@ ul {
     background-color: #EDF2EC;
 }
 
-.welcome__wrapper {
-    padding-top: 62px;
-    padding-bottom: 62px;
+.layout-2-column {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.welcome__wrapper {
+    padding-top: 62px;
+    padding-bottom: 62px;
 }
 
 .welcome__image {
@@ -137,9 +140,6 @@ ul {
 .about__wrapper {
     padding-top: 93px;
     padding-bottom: 94px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
 }
 
 .header_inika {
@@ -195,19 +195,22 @@ ul {
     gap: 38px;
 }
 
-.button {
+.button_orange {
     box-sizing: border-box;
-    width: 161px;
-    height: 50px;
     text-align: center;
     font-family: 'Inika';
     font-style: normal;
     font-size: 20px;
     line-height: 26px;
     color: #E06733;
-    background-color: #EDF2EC;
     border: 1px solid #E06733;
     border-radius: 5px;
+}
+
+.service__button {
+    background-color: #EDF2EC;
+    width: 161px;
+    height: 50px;
 }
 
 .cards__layout {
@@ -251,4 +254,87 @@ ul {
     font-size: 16px;
     line-height: 20px;
     color: #717171;
+}
+
+.prices {
+    font-family: 'Inter', sans-serif;
+    color: #000000;
+}
+
+.prices__wrapper {
+    padding-top: 39px;
+    padding-bottom: 115px;
+}
+
+.prices__title {
+    font-size: 40px;
+    line-height: 48px;
+}
+
+.accordion__wrapper {
+    margin-top: 60px;
+    padding: 33px 40px;
+    border: 1px solid #E3E1D5;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+.accordion__button {
+    width: 250px;
+    height: 50px;
+    padding: 16px 40px;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 700;
+    border: none;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.accordion__button_hide {
+    background: #EDF2EC;
+}
+
+.arrow_hide {
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-image: url(./assets/svg/accordion_btn_hide.svg);
+}
+
+.prices__right-part {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.prices__text {
+    width:455px;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 50px;
+    text-align: right;
+}
+
+.prices__button_wrapper {
+    margin-top: 40px;
+}
+
+.prices__button {
+    padding: 11px 32px;
+    background-color: #FFF;
+}
+
+.prices__image {
+    display: block;
+    width: 166px;
+    margin-top: 34px;
+    position: relative;
+    left: 9px;
 }
