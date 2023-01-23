@@ -29,6 +29,8 @@ ul {
 }
 
 .logo {
+  margin-bottom: 5px;
+  margin-left: 2px;
   margin-right: auto;
   display: flex;
   flex-direction: row;
@@ -36,13 +38,9 @@ ul {
   color: #010201;
 }
 
-.logo__image {
-  margin-left: 1px;
-}
-
 .navigation {
   display: flex;
-  gap: 46px;
+  gap: 47px;
   line-height: 50px;
   font-size: 16px;
 }
@@ -116,18 +114,32 @@ ul {
 
 .welcome__text {
   margin-top: 44px;
+  margin-bottom: 47px;
   line-height: 35px;
 }
 
-.welcome__link_wrapper {
-  margin-top: 59px;
+.button__orange {
+  box-sizing: border-box;
+  text-align: center;
+  color: #E06733;
+  background-color: inherit;
+  border: 1px solid #E06733;
 }
 
-.welcome__link {
+.button__orange:hover {
+  color: #FFF;
+  background-color: #E06733;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.welcome__button {
+  width: 158px;
+  height: 44px;
   font-size: 16px;
   color: #000;
-  padding: 10px 26px;
-  border: 2px solid #E06733;
+  background-color: inherit;
+  border-width: 2px;
   border-radius: 10px;
 }
 
@@ -192,27 +204,11 @@ ul {
   gap: 38px;
 }
 
-.button_orange {
-  box-sizing: border-box;
-  text-align: center;
+.service__button {
   font-family: 'Inika', serif;
-  font-style: normal;
   font-size: 20px;
   line-height: 26px;
-  color: #E06733;
-  border: 1px solid #E06733;
   border-radius: 5px;
-}
-
-.button_orange:hover {
-  color: #FFF;
-  background-color: #E06733;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
-}
-
-.service__button {
-  background-color: #EDF2EC;
   width: 161px;
   height: 50px;
 }
@@ -397,15 +393,17 @@ ul {
   font-size: 40px;
   line-height: 50px;
   text-align: right;
-}
-
-.prices__button_wrapper {
-  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .prices__button {
-  padding: 11px 32px;
-  background-color: #FFF;
+  width: 162px;
+  height: 50px;
+  font-family: 'Inika', serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  border-radius: 5px;
 }
 
 .prices__image {
