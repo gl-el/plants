@@ -58,6 +58,12 @@ ul {
   font-weight: 700;
 }
 
+.link:hover {
+  color: #E06733;
+  font-weight: 700;
+  transition: 0.3s ease-in-out;
+}
+
 .main {
   width: 100%;
 }
@@ -198,6 +204,13 @@ ul {
   border-radius: 5px;
 }
 
+.button_orange:hover {
+  color: #FFF;
+  background-color: #E06733;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
 .service__button {
   background-color: #EDF2EC;
   width: 161px;
@@ -215,6 +228,12 @@ ul {
 .card {
   width: 330px;
   border-radius: 20px;
+}
+
+.card:hover {
+  cursor:pointer;
+  scale: 1.1;
+  transition: 0.3s ease-in-out;
 }
 
 .card__image {
@@ -272,6 +291,12 @@ ul {
   width: 170px;
   border-radius: 20px;
   padding: 0px 40px;
+}
+
+.accordion__item:hover {
+  cursor: pointer;
+  background: #D6E7D2;
+  transition: all 0.3s ease-in-out;
 }
 
 .accordion__item_hide {
@@ -552,6 +577,7 @@ ul {
 }
 
 .icon__social {
+  display:inline-block;
   width: 32px;
   height: 32px;
 }
