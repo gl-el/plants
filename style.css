@@ -70,29 +70,35 @@ ul {
   width: 100%;
 }
 
-.welcome {
-  background-color: #EDF2EC;
-}
-
 .layout-2-column {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
+.layout-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 .welcome {
+  background-color: #EDF2EC;
   padding-top: 62px;
-  padding-bottom: 62px;
+  padding-bottom: 60px;
 }
 
 .welcome__image {
-  width: 448.8px;
-  height: 407.36px;
-  flex-shrink: 0;
+  max-width: 449px;
+  object-fit: contain;
+  object-position: top;
+  order: 0;
 }
 
 .welcome__content {
-  flex-basis: 549px
+  max-width: 549px;
+  flex-shrink: 0;
 }
 
 .welcome__header {
@@ -154,8 +160,12 @@ ul {
 }
 
 .about {
-  padding-top: 93px;
+  padding-top: 92px;
   padding-bottom: 94px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .header_inika {
@@ -170,8 +180,9 @@ ul {
 }
 
 .about__header {
-  margin-top: 69px;
+  margin: 69px 0 0;
   width: 465px;
+  text-align: left;
 }
 
 .about__text {
@@ -180,8 +191,9 @@ ul {
 }
 
 .about__image {
-  width: 464px;
-  height: 479px;
+  max-width: 464px;
+  object-fit: contain;
+  object-position: top;
 }
 
 .service {
@@ -227,11 +239,10 @@ ul {
 
 .card {
   width: 330px;
-  border-radius: 20px;
 }
 
 .card:hover {
-  cursor:pointer;
+  cursor: pointer;
   scale: 1.1;
   transition: 0.3s ease-in-out;
 }
@@ -240,15 +251,15 @@ ul {
   display: block;
   width: 100%;
   height: 350px;
-
+  object-fit: cover;
+  border-radius: 20px 20px 0px 0px;
 }
 
 .card__description {
   border: 1px solid #E3E1D5;
   border-radius: 0px 0px 20px 20px;
   text-align: center;
-  padding-top: 9px;
-  padding-bottom: 34px;
+  padding: 9px 0px 34px 0px;
 }
 
 .card__title {
@@ -267,6 +278,13 @@ ul {
 
 .prices {
   color: #000000;
+}
+
+.prices__layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
   padding-top: 39px;
   padding-bottom: 108px;
 }
@@ -389,10 +407,11 @@ ul {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-end;
+  margin-top: 0px;
 }
 
 .prices__text {
-  width: 455px;
+  max-width: 455px;
   font-weight: 700;
   font-size: 40px;
   line-height: 50px;
@@ -412,7 +431,7 @@ ul {
 
 .prices__image {
   display: block;
-  width: 166px;
+  max-width: 166px;
   margin-top: 34px;
   position: relative;
   left: 9px;
@@ -423,11 +442,14 @@ ul {
   padding-top: 53px;
   display: grid;
   grid-template-columns: 450px 1fr 450px;
+  grid-template-rows: 1fr;
 }
 
 .contacts__image {
-  width: 400px;
+  max-width: 400px;
   justify-self: start;
+  grid-row-start: 1;
+  padding-left: 0;
 }
 
 .contacts__header {
@@ -442,11 +464,10 @@ ul {
 
 .contacts__info {
   font-weight: 400;
-}
-
-.dropdown__wrapper {
-  justify-self: stretch;
   margin-top: 95px;
+  margin-bottom: 5px;
+  width: 450px;
+  justify-self: stretch;
 }
 
 .dropdown__header {
@@ -566,10 +587,27 @@ ul {
   padding-bottom: 40px;
 }
 
+.footer__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.footer__copyright {
+  justify-self: start;
+}
+
+.footer__link {
+  justify-self: center;
+}
+
+.footer__social-list {
+  justify-self: end;
+}
+
 .layout_row {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   gap: 20px;
 }
@@ -579,7 +617,7 @@ ul {
 }
 
 .icon__social {
-  display:inline-block;
+  display: inline-block;
   width: 32px;
   height: 32px;
 }
@@ -587,4 +625,167 @@ ul {
 .icon__social:hover {
   scale: 1.2;
   transition: all 0.2s ease-in-out;
+}
+
+
+@media screen and (max-width: 768px) {
+  .body {
+    width: 768px;
+  }
+
+  .wrapper {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .header {
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
+
+  .welcome {
+    padding-top: 37px;
+    padding-bottom: 70px;
+  }
+
+  .welcome__content {
+    max-width: 346px;
+    flex-grow: 1;
+  }
+
+  .welcome__image {
+    max-width: 280px;
+    order: 1;
+  }
+
+  .welcome__header {
+    margin-top: 0;
+    font-size: 35px;
+  }
+
+  .welcome__text {
+    margin-top: 30px;
+    margin-bottom: 35px;
+    font-size: 16px;
+    line-height: 25px;
+  }
+
+  .about {
+    padding-top: 40px;
+    padding-bottom: 91px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .about__header {
+    margin: 0 auto;
+    text-align: center;
+    ;
+  }
+
+  .header_inika {
+    font-size: 35px;
+    line-height: 46px;
+  }
+
+  .about__content {
+    flex-basis: 390px;
+  }
+
+  .about__text {
+    margin-top: 50px;
+    ;
+  }
+
+  .about__image {
+    max-width: 254px;
+  }
+
+  .service {
+    padding-top: 60px;
+    padding-bottom: 68px;
+  }
+
+  .service__header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .cards__layout {
+    margin-top: 39px;
+    column-gap: 106px;
+    row-gap: 37px;
+  }
+
+  .card {
+    width: 280px;
+  }
+
+  .card__image {
+    height: 350px;
+  }
+
+  .card__description {
+    padding: 9px 8px 20px 8px;
+  }
+
+  .card__text {
+    margin-top: 10px;
+  }
+
+  .prices__title {
+    font-size: 35px;
+    line-height: 48px;
+  }
+
+  .accordion__wrapper {
+    margin-top: 55px;
+  }
+
+  .prices__right-part {
+    margin-top: 103px;
+  }
+
+  .prices__text {
+    font-size: 25px;
+    line-height: 35px;
+    margin-bottom: 28px;
+  }
+
+  .prices__layout {
+    padding-bottom: 75px;
+  }
+
+  .contacts {
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 358px 1fr;
+    padding-top: 33px;
+  }
+
+  .contacts__image {
+    grid-row-start: 3;
+    justify-self: center;
+    max-width: 200px;
+    padding-left: 20px;
+  }
+
+  .contacts__info {
+    margin-top: 58px;
+    justify-self: center;
+  }
+
+  .footer {
+    padding-top: 20px;
+  }
+
+  .footer__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .footer__copyright,
+  .footer__social-list {
+    justify-self: center;
+  }
+
 }
