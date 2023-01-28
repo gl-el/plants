@@ -1,35 +1,39 @@
 const navigation = document.querySelector('.navigation');
-document.addEventListener('DOMContentLoaded', navigationBurger)
-function navigationBurger() {
-    const burger = document.querySelector('.burger-btn');
-    const page = document.querySelector('.body');
-    const burgerClose = document.querySelector('.burger-close')
-    const navigationLink = document.querySelector('.navigation__link');
-    navigation.addEventListener('click', () => {
-    if (navigation.classList='navigation navigation_active') {
-        navigation.classList.remove('navigation_active');
-        burgerClose.classList.remove('burger-close_active');
-        page.classList.remove('body_hide');
-    }
+const burger = document.querySelector('.burger-btn');
+const page = document.querySelector('.body');
+const burgerClose = document.querySelector('.burger-close')
+const navigationLink = document.querySelector('.navigation__link');
+
+document.addEventListener('DOMContentLoaded', function () {toggleMenu(burger, navigation, burgerClose)});
+function toggleMenu(button, menu, restPage) {
+    button.addEventListener('click', () => {
+        addNavigation(menu, restPage, page)
     });
-    burger.addEventListener('click', () => {
-        navigation.classList.toggle('navigation_active');
-        burgerClose.classList.add('burger-close_active');
-        page.classList.add('body_hide');
+    menu.addEventListener('click', () => {
+        removeNavigation(menu, restPage, page)
     });
-    burgerClose.addEventListener('click', () => {
-        navigation.classList.remove('navigation_active');
-        burgerClose.classList.remove('burger-close_active');
-        page.classList.remove('body_hide');
+    restPage.addEventListener('click', () => {
+        removeNavigation(menu, restPage, page)
     });
 };
 
-window.addEventListener('resize', function() {
+function removeNavigation(menu, restPage, noScroll) {
+    if (menu.classList = 'navigation navigation_active') {
+        menu.classList.remove('navigation_active');
+        restPage.classList.remove('burger-close_active');
+        noScroll.classList.remove('body_hide');
+        console.log(menu, restPage, noScroll);
+    }
+}
+
+function addNavigation(menu, restPage, noScroll) {
+    menu.classList.toggle('navigation_active');
+    restPage.classList.add('burger-close_active');
+    noScroll.classList.add('body_hide');
+    console.log(menu, restPage, noScroll);
+}
+
+window.addEventListener('resize', function () {
     if (window.innerWidth > 380) navigation.classList.remove('navigation_active');
-  });
+});
 
- /* document.addEventListener('click', (e) => {
-    let element = e.target;
-    console.log(element);
-
-  })*/
