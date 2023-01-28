@@ -28,7 +28,14 @@
         <li class="navigation__link"><a class="link" href="#prices">Prices</a></li>
         <li class="navigation__link"><a class="link" href="#contacts">Contacts</a></li>
       </ul>
+      <button class="burger-btn">
+        <div class="line line1"></div>
+        <div class="line line2"></div>
+        <div class="line line3"></div>
+        <div class="line line4"></div>
+      </button>
     </nav>
+    <div class="burger-close"></div>
   </header>
   <main class="main">
     <section class="welcome wrapper layout-2-column">
@@ -108,7 +115,7 @@
       </div>
     </section>
     <section class="prices wrapper prices__layout" id="prices">
-      <div class="prcies__left-part">
+      <div class="prices__left-part">
         <h4 class="prices__title">Prices</h4>
         <div class="accordion__wrapper">
           <div class="accordion__item accordion__item_hide">
@@ -150,7 +157,8 @@
       </div>
     </section>
     <section class="contacts wrapper" id="contacts">
-      <img class="contacts__image" src="./assets/img/contact_woman.png" alt="woman with flower in a pot">
+      <img class="contacts__image contacts__image_show" src="./assets/img/contact_woman.png"
+        alt="woman with flower in a pot">
       <h4 class="contacts__header">Contact us</h4>
       <div class="contacts__info">
         <div class="dropdown__header header_inactive">City <span class="header__arrow"></span></div>
@@ -160,7 +168,7 @@
           <div class="content__item">Yonkers, NY</div>
           <div class="content__item">Sherrill, NY</div>
         </div>
-        <div class="info info_unactive">
+        <div class="info info_inactive">
           <div class="info__wrapper">
             <p class="info__line">City:</p>
             <p class="info__value city__value">Example</p>
@@ -204,6 +212,7 @@
       </li>
     </ul>
   </footer>
+  <script src="index.js"></script>
 </body>
 
 </html>
