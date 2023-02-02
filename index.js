@@ -4,7 +4,7 @@ const page = document.querySelector('.body');
 const burgerClose = document.querySelector('.burger-close')
 const navigationLink = document.querySelector('.navigation__link');
 
-document.addEventListener('DOMContentLoaded', function () {toggleMenu(burger, navigation, burgerClose)});
+document.addEventListener('DOMContentLoaded', function () { toggleMenu(burger, navigation, burgerClose) });
 function toggleMenu(button, menu, restPage) {
     button.addEventListener('click', () => {
         addNavigation(menu, restPage, page)
@@ -37,3 +37,73 @@ window.addEventListener('resize', function () {
     if (window.innerWidth > 380) navigation.classList.remove('navigation_active');
 });
 
+/*adding blur for service section cards*/
+
+const serviceButtons = document.querySelectorAll('.service__button');
+const cards = document.querySelectorAll('.card');
+const MAX_ACTIVE = 2;
+serviceButtons.forEach((button) => {
+    button.addEventListener('click', (event) => {
+        const buttonClicked = event.target;
+        const buttonText = buttonClicked.textContent;
+        buttonClicked.classList.toggle('service__button_active');
+        const counter = document.querySelectorAll('.service__button_active').length;
+        const buttonActive = document.querySelector('.service__button_active'); //needed only for first click, so just querySelector, not querySelectorAll
+        if (counter === 1) { //on first active click add for all cards inactive class and remove it from clicked
+            addAllCardsInactive(cards);
+            removeCardsInactive(cards, buttonActive.textContent);
+        } else if (counter === 0) { //remove inactive class if no buttons is active
+            removeAllCardsInactive(cards)
+        } else if (counter > MAX_ACTIVE) { //toggle cards and buttons class if pressed more buttons, that possible
+            toggleButtonsClass(serviceButtons, button);
+            toggleCardsInactive(cards, buttonText);
+        } else if (button.classList.contains('service__button_active')) {//remove inactive if click on inactivated button
+            button.classList.add('service__button_active');
+            removeCardsInactive(cards, buttonText)
+        } else {//add inactive if click on activated button
+            button.classList.remove('service__button_active');
+            addCardsInactive(cards, buttonText)
+        }
+    });
+});
+
+function addAllCardsInactive(cards) {
+    cards.forEach((card) => card.classList.add('card_inactive'));
+}
+
+function removeAllCardsInactive(cards) {
+    cards.forEach((card) => card.classList.remove('card_inactive'));
+}
+
+function removeCardsInactive(cards, text) {
+    cards.forEach((card) => {
+        if (card.textContent.includes(`${text}`)) {
+            card.classList.remove('card_inactive')
+        }
+    });
+}
+
+function addCardsInactive(cards, text) {
+    cards.forEach((card) => {
+        if (card.textContent.includes(`${text}`)) {
+            card.classList.add('card_inactive')
+        }
+    });
+}
+
+function toggleCardsInactive(cards, text) {
+    cards.forEach((card) => {
+        if (!card.textContent.includes(`${text}`)) {
+            card.classList.add('card_inactive')
+        } else {
+            card.classList.remove('card_inactive')
+        }
+    });
+}
+
+function toggleButtonsClass(buttons, button) {
+    buttons.forEach((button) => {
+        button.classList.toggle('service__button_active');
+    });
+    button.classList.add('service__button_active');
+}

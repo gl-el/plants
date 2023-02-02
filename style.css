@@ -287,6 +287,11 @@ ul {
   height: 50px;
 }
 
+.service__button_active {
+  background-color: #E06733;
+  color: #FFFFFF;
+}
+
 .cards__layout {
   margin-top: 80px;
   display: flex;
@@ -298,6 +303,10 @@ ul {
 
 .card {
   width: 330px;
+}
+
+.card_inactive {
+  filter: blur(2px);
 }
 
 .card:hover {
