@@ -22,7 +22,6 @@ function removeNavigation(menu, restPage, noScroll) {
         menu.classList.remove('navigation_active');
         restPage.classList.remove('burger-close_active');
         noScroll.classList.remove('body_hide');
-        console.log(menu, restPage, noScroll);
     }
 }
 
@@ -30,7 +29,6 @@ function addNavigation(menu, restPage, noScroll) {
     menu.classList.toggle('navigation_active');
     restPage.classList.add('burger-close_active');
     noScroll.classList.add('body_hide');
-    console.log(menu, restPage, noScroll);
 }
 
 window.addEventListener('resize', function () {
@@ -107,3 +105,26 @@ function toggleButtonsClass(buttons, button) {
     });
     button.classList.add('service__button_active');
 }
+
+/*accordion in prices section*/
+
+const accordionButton = document.querySelectorAll('.accordion__item');
+accordionButton.forEach((button) => {
+    const accordionArrow = document.querySelector('.accordion__arrow');
+    button.addEventListener('click', (event) => {
+        const elementClicked = event.target.classList;
+        const parent = event.target.parentNode.classList
+        if (parent.contains('accordion__item_active') && elementClicked.value !== 'accordion__button') {
+            button.classList.toggle('accordion__item_hide');
+            button.classList.toggle('accordion__item_active');
+        } else if (elementClicked.value !== 'accordion__button') {
+            accordionButton.forEach((button) => {
+                button.classList.add('accordion__item_hide');
+                button.classList.remove('accordion__item_active');
+            });
+            button.classList.toggle('accordion__item_hide');
+            button.classList.toggle('accordion__item_active');
+            accordionArrow.classList.toggle('arrow_hide');
+        }
+    });
+});

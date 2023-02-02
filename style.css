@@ -381,12 +381,12 @@ ul {
   width: 170px;
   border-radius: 20px;
   padding: 0px 40px;
+  transition: all 0.3s ease-in-out;
 }
 
 .accordion__item:hover {
   cursor: pointer;
   background: #D6E7D2;
-  transition: all 0.3s ease-in-out;
 }
 
 .accordion__item_hide {
@@ -407,26 +407,28 @@ ul {
   justify-content: space-between;
 }
 
-.arrow_hide {
+.accordion__arrow {
   display: block;
   width: 16px;
   height: 16px;
   background-image: url(./assets/svg/accordion_btn_hide.svg);
+  transition: all 0.5s;
 }
 
-.arrow_active {
+.accordion__item_active .accordion__arrow {
   display: block;
   width: 16px;
   height: 16px;
-  background-image: url(./assets/svg/accordion_btn_active.svg);
+  transform: rotate(180deg);
+  filter: brightness(0.9);
 }
 
-.accordion__content {
+.accordion__item_active .accordion__content {
   padding-bottom: 11px;
   font-size: 0;
 }
 
-.accordion__content_hide {
+.accordion__item_hide .accordion__content {
   display: none;
 }
 
@@ -463,16 +465,32 @@ ul {
 }
 
 .accordion__button {
+  display: block;
+  width: 86px;
   font-weight: 700;
   font-size: 14px;
   line-height: 20px;
   color: #717171;
   margin-top: 7px;
-  padding: 3px 23px;
+  padding: 3px;
   border: none;
   background: #FFFFFF;
   border-radius: 10px;
+  text-decoration: none;
+  text-align: center;
+  transition: aLL 0.3s;
 }
+
+.accordion__button:hover {
+  background-color: #E06733;
+  color: #FFFFFF;
+}
+
+.accordion__button:active {
+  background-color: #499A18;
+  color: #FFFFFF;
+}
+
 
 .prices__right-part {
   display: flex;
