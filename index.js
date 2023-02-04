@@ -114,7 +114,9 @@ accordionButton.forEach((button) => {
     button.addEventListener('click', (event) => {
         const elementClicked = event.target.classList;
         const parent = event.target.parentNode.classList
-        if (parent.contains('accordion__item_active') && elementClicked.value !== 'accordion__button') {
+        if ((parent.contains('accordion__item_active') && elementClicked.value !== 'accordion__button') ||
+            (parent.contains('accordion__content') && elementClicked.value !== 'accordion__button') ||
+            elementClicked.contains('accordion__item')) {
             button.classList.toggle('accordion__item_hide');
             button.classList.toggle('accordion__item_active');
         } else if (elementClicked.value !== 'accordion__button') {
@@ -128,3 +130,76 @@ accordionButton.forEach((button) => {
         }
     });
 });
+
+/*drop down in contacts */
+const contactsButton = document.querySelector('.dropdown__header');
+const contactsImg = document.querySelector('.contacts__image');
+const dropList = document.querySelector('.dropdown__content');
+const dropItems = document.querySelectorAll('.dropdown__item');
+const dropTitle = document.querySelector('.dropdown-city');
+const info = document.querySelector('.info');
+const cityValue = document.querySelector('.city-value');
+const phoneValue = document.querySelector('.phone-value');
+const addressValue = document.querySelector('.address-value');
+const phoneLink = document.querySelector('.phone-link');
+const cardsData = [
+    {
+		city: 'Yonkers, NY',
+		phone: '+1 914 678 0003',
+		address: '511 Warburton Ave',
+	},
+	{
+		city: 'Canandaigua, NY',
+		phone: '+1 585 393 0001',
+		address: '151 Charlotte Street',
+	},
+	{
+		city: 'Sherrill, NY',
+		phone: '+1 315 908 0004',
+		address: '14 WEST Noyes BLVD',
+	},
+	{
+		city: 'New York City',
+		phone: '+1 212 456 0002',
+		address: '9 East 91st Street',
+	}
+]
+
+contactsButton.addEventListener('click', (event) => {
+    toggleDropDown();
+    info.classList.add('info_inactive');
+});
+
+dropItems.forEach((item) => {
+    item.addEventListener('click', (event) => {
+        const itemClicked = event.target
+        dropTitle.textContent = itemClicked.textContent;
+        toggleDropDown();
+        contactsButton.classList.add('header_active')
+        addInfo(itemClicked.textContent);
+        info.classList.remove('info_inactive');
+        toggleImage();
+    })
+})
+
+function toggleDropDown() {
+    contactsButton.classList.toggle('header_inactive');
+    contactsButton.classList.toggle('header_active');
+    dropList.classList.toggle('dropdown__inactive');
+};
+
+function toggleImage() {
+    contactsImg.classList.toggle('contacts__image_show');
+    contactsImg.classList.toggle('contacts__image_hide');
+}
+
+function addInfo(selected) {
+    cardsData.forEach((card) => {
+        if (card.city === selected) {
+            cityValue.textContent = card.city;
+            phoneValue.textContent = card.phone;
+            addressValue.textContent = card.address;
+            phoneLink.setAttribute('href', `tel:${phoneValue.textContent}`);
+        };
+    });
+}
